@@ -60,7 +60,7 @@ public class ConnectionManager {
 	}
 
 	private static void emptyMessageStorage() throws IOException {
-		File directory = new File("src/messageStorage");
+		File directory = new File("messageStorage");
 		FileUtils.cleanDirectory(directory);
 	}
 
@@ -70,7 +70,7 @@ public class ConnectionManager {
 			Buffer buffer = new Buffer();
 			Objects.requireNonNull(copy.body()).writeTo(buffer);
 			String requestBody = buffer.readUtf8();
-			FileWriter file = new FileWriter("src/messageStorage/Request.json");
+			FileWriter file = new FileWriter("messageStorage/Request.json");
 			file.write(requestBody);
 			file.close();
 		} catch (Exception e) {
@@ -81,7 +81,7 @@ public class ConnectionManager {
 	private static String saveResponseBody(Response response) throws Exception {
 		try {
 			String responseBody = Objects.requireNonNull(response.body()).string();
-			FileWriter file = new FileWriter("src/messageStorage/Response.json");
+			FileWriter file = new FileWriter("messageStorage/Response.json");
 			file.write(responseBody);
 			file.close();
 			return responseBody;

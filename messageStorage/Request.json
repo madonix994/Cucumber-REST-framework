@@ -1,0 +1,17 @@
+{
+"deviceFingerprint": "iovation device fingerprint",
+"trackingSource": {
+"CustomFields": [
+{
+"Value": "Broad",
+"Key": "MatchType"
+}
+],
+"Creative": "Advert",
+"Content": "Hulk slot",
+"Btag": "btag value",
+"MarketingChannel": "PPC",
+"CampaignName": "Add group (slots)",
+"MarketingSource": "Google"
+},
+"player":}

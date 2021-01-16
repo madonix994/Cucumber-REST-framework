@@ -1,21 +1,21 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "line": 10,
-        "name": "Create new Player via API2",
+        "line": 5,
+        "name": "Create new Player via API",
         "description": "",
-        "id": "test;create-new-player-via-api2",
+        "id": "test;create-new-player-via-api",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 866729700,
+              "duration": 655564800,
               "status": "passed"
             },
-            "line": 11,
+            "line": 6,
             "name": "The env is up and running",
             "match": {
               "location": "TestSteps.theEnvIsUpAndRunning()"
@@ -24,10 +24,10 @@
           },
           {
             "result": {
-              "duration": 165917800,
+              "duration": 176312200,
               "status": "passed"
             },
-            "line": 12,
+            "line": 7,
             "name": "User wants to create player",
             "match": {
               "location": "TestSteps.userWantsToCreatePlayer()"
@@ -36,10 +36,11 @@
           },
           {
             "result": {
-              "duration": 865380000,
-              "status": "passed"
+              "duration": 132462700,
+              "error_message": "java.lang.Exception: \n\nPlayer was not created with username: QAWA8K1p9Z0x4\r\n\tat steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)\r\n\tat ✽.Then User send request to create player(Test.feature:8)\r\n",
+              "status": "failed"
             },
-            "line": 13,
+            "line": 8,
             "name": "User send request to create player",
             "match": {
               "location": "TestSteps.userSendRequestToCreatePlayer()"
@@ -49,7 +50,60 @@
         ],
         "tags": [
           {
-            "line": 9,
+            "line": 4,
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "line": 11,
+        "name": "Create new Player via API2",
+        "description": "",
+        "id": "test;create-new-player-via-api2",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 56795400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "The env is up and running",
+            "match": {
+              "location": "TestSteps.theEnvIsUpAndRunning()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 42591000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User wants to create player",
+            "match": {
+              "location": "TestSteps.userWantsToCreatePlayer()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 70864200,
+              "error_message": "java.lang.Exception: \n\nPlayer was not created with username: QAWA8o4k4M1j6\r\n\tat steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)\r\n\tat ✽.Then User send request to create player(Test.feature:14)\r\n",
+              "status": "failed"
+            },
+            "line": 14,
+            "name": "User send request to create player",
+            "match": {
+              "location": "TestSteps.userSendRequestToCreatePlayer()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 10,
             "name": "@regression"
           }
         ]
@@ -59,6 +113,12 @@
     "description": "",
     "id": "test",
     "keyword": "Feature",
-    "uri": "Test.feature"
+    "uri": "Test.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@all"
+      }
+    ]
   }
 ]

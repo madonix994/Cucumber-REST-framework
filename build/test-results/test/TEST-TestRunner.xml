@@ -1,95 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="TestRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="KGCDS-PREDRAGK" time="0.0">
   <properties/>
-  <system-out><![CDATA[Feature: Test
-Player data helpers.classes.Player@5ae51104[
-  Locale=en-US
-  HouseNumber=35
-  InstantMessenger=386
-  SignupIp=193.169.48.48
-  PostalCode=25
-  Gender=M
-  PortalId=1
-  CurrencyId=112
-  MobilePhone=5910307710
-  GeoLocCountryCode=en
-  Street=Lang Tunnel
-  HearAboutUs=internet
-  CustomParameters=[helpers.classes.CustomParameter@36b564c[value=creferer val,key=creferer]]
-  Password=qaNA12345!
-  DateOfBirth=/Date(345427200000)/
-  CountryId=194
-  InstantMessengerType=105
-  SecretAnswer=Answer to security question
-  UserName=QAWA9l5W8k5G5
-  FirstName=QAWA9l5W8k5G5
-  StateProvince=State and Province
-  Title=1
-  City=Maribor
-  EMail=QAWA9l5W8k5G5@mailinator.com
-  MiddleName=Lonny
-  DocumentNumber=3807108109508
-  ProductTypeId=1
-  ReceiveNews=true
-  CouponCode=
-  SecretQuestionId=1
-  PhoneNumber=0964723095
-  LastName=Harris
-  MobileClient=true
-]
--------------------- QAWA9l5W8k5G5
+  <system-out><![CDATA[@all
+Feature: Test
 
 
- Code:200
-Player data helpers.classes.Player@7baf69a5[
-  Locale=en-US
-  HouseNumber=35
-  InstantMessenger=386
-  SignupIp=193.169.48.48
-  PostalCode=25
-  Gender=M
-  PortalId=1
-  CurrencyId=112
-  MobilePhone=7463976060
-  GeoLocCountryCode=en
-  Street=Marcia Garden
-  HearAboutUs=internet
-  CustomParameters=[helpers.classes.CustomParameter@63441284[value=creferer val,key=creferer]]
-  Password=qaNA12345!
-  DateOfBirth=/Date(345427200000)/
-  CountryId=194
-  InstantMessengerType=105
-  SecretAnswer=Answer to security question
-  UserName=QAWA0A3F4t7D1
-  FirstName=QAWA0A3F4t7D1
-  StateProvince=State and Province
-  Title=1
-  City=Maribor
-  EMail=QAWA0A3F4t7D1@mailinator.com
-  MiddleName=Simona
-  DocumentNumber=6789457040279
-  ProductTypeId=1
-  ReceiveNews=true
-  CouponCode=
-  SecretQuestionId=1
-  PhoneNumber=0800019876
-  LastName=Donnelly
-  MobileClient=true
-]
--------------------- QAWA0A3F4t7D1
+Player was generated with username: QAWA8K1p9Z0x4
 
 
- Code:200
+Player was generated with username: QAWA8o4k4M1j6
 
   @regression
-  Scenario: Create new Player via API2      # Test.feature:10
+  Scenario: Create new Player via API2      # Test.feature:11
     Given The env is up and running         # TestSteps.theEnvIsUpAndRunning()
     When User wants to create player        # TestSteps.userWantsToCreatePlayer()
     Then User send request to create player # TestSteps.userSendRequestToCreatePlayer()
+      java.lang.Exception: 
+      
+      Player was not created with username: QAWA8o4k4M1j6
+      	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
+      	at ?.Then User send request to create player(Test.feature:14)
 
-2 Scenarios (2 passed)
-6 Steps (6 passed)
-0m3.437s
+
+2 Scenarios (2 failed)
+6 Steps (2 failed, 4 passed)
+0m1.135s
+
+java.lang.Exception: 
+
+Player was not created with username: QAWA8K1p9Z0x4
+	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
+	at ?.Then User send request to create player(Test.feature:8)
+
+java.lang.Exception: 
+
+Player was not created with username: QAWA8o4k4M1j6
+	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
+	at ?.Then User send request to create player(Test.feature:14)
 
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

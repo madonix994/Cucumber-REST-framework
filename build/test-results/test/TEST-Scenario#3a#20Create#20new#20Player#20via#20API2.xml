@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Scenario: Create new Player via API2" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-01-16T13:22:58" hostname="KGCDS-PREDRAGK" time="1.257">
+<testsuite name="Scenario: Create new Player via API2" tests="4" skipped="0" failures="2" errors="0" timestamp="2021-01-16T14:31:29" hostname="KGCDS-PREDRAGK" time="0.118">
   <properties/>
   <testcase name="Given The env is up and running" classname="Scenario: Create new Player via API2" time="0.0"/>
   <testcase name="When User wants to create player" classname="Scenario: Create new Player via API2" time="0.0"/>
-  <testcase name="Then User send request to create player" classname="Scenario: Create new Player via API2" time="0.0"/>
-  <testcase name="classMethod" classname="Scenario: Create new Player via API2" time="1.317"/>
+  <testcase name="Then User send request to create player" classname="Scenario: Create new Player via API2" time="0.0">
+    <failure message="java.lang.Exception: &#10;&#10;Player was not created with username: QAWA8o4k4M1j6" type="java.lang.Exception">java.lang.Exception: 
+
+Player was not created with username: QAWA8o4k4M1j6
+	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
+	at ✽.Then User send request to create player(Test.feature:14)
+</failure>
+  </testcase>
+  <testcase name="classMethod" classname="Scenario: Create new Player via API2" time="0.179">
+    <failure message="java.lang.Exception: &#10;&#10;Player was not created with username: QAWA8o4k4M1j6" type="java.lang.Exception">java.lang.Exception: 
+
+Player was not created with username: QAWA8o4k4M1j6
+	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
+	at ✽.Then User send request to create player(Test.feature:14)
+</failure>
+  </testcase>
   <system-out><![CDATA[
   @smoke
-  Scenario: Create new Player via API       # Test.feature:4
+  Scenario: Create new Player via API       # Test.feature:5
     Given The env is up and running         # TestSteps.theEnvIsUpAndRunning()
     When User wants to create player        # TestSteps.userWantsToCreatePlayer()
     Then User send request to create player # TestSteps.userSendRequestToCreatePlayer()
-Pinging the icmanrc env.
+      java.lang.Exception: 
+      
+      Player was not created with username: QAWA8K1p9Z0x4
+      	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
+      	at ?.Then User send request to create player(Test.feature:8)
+
+Pinging the ICMANRC env.
 Env has status 403 which is expected.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
