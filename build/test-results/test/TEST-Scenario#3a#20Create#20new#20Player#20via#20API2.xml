@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Create new Player via API2" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-01-16T13:22:58" hostname="KGCDS-PREDRAGK" time="1.257">
+  <properties/>
+  <testcase name="Given The env is up and running" classname="Scenario: Create new Player via API2" time="0.0"/>
+  <testcase name="When User wants to create player" classname="Scenario: Create new Player via API2" time="0.0"/>
+  <testcase name="Then User send request to create player" classname="Scenario: Create new Player via API2" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Create new Player via API2" time="1.317"/>
+  <system-out><![CDATA[
+  @smoke
+  Scenario: Create new Player via API       # Test.feature:4
+    Given The env is up and running         # TestSteps.theEnvIsUpAndRunning()
+    When User wants to create player        # TestSteps.userWantsToCreatePlayer()
+    Then User send request to create player # TestSteps.userSendRequestToCreatePlayer()
+Pinging the icmanrc env.
+Env has status 403 which is expected.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
