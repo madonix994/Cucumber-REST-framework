@@ -1,8 +1,9 @@
 package helpers;
 
 import com.github.javafaker.Faker;
-import helpers.classes.CustomParameter;
-import helpers.classes.Player;
+import helpers.classes.requests.CustomParameter;
+import helpers.classes.requests.Player;
+import helpers.classes.requests.CreatePlayerRQ;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import static helpers.RandomGenerator.GenerateRandomNumber;
 public class CreatePlayer {
 
 	public static Player player;
-
+	public static CreatePlayerRQ createPlayerRQ;
 
 	public static String createNewPlayer() throws Exception {
 		String playerName = GenerateName();
@@ -55,10 +56,10 @@ public class CreatePlayer {
 			player.setPhoneNumber((GenerateRandomNumber(10)));
 			player.setLastName(faker.name().lastName());
 			player.setMobileClient(true);
+			createPlayerRQ = new CreatePlayerRQ(player);
 		} catch (Exception e) {
 			throw new Exception("There was an issue while trying to create a new player. Error message: " + e);
 		}
-		System.out.println("\n\nPlayer was generated with username: " + playerName);
 		return playerName;
 	}
 }

@@ -26,12 +26,15 @@ configurations {
 
 test {
     dependsOn assemble, testClasses
-    println("------------------    "+System.getProperty("cucumber.options"))
+    println("------------------    " + System.getProperty("cucumber.options"))
+    println("------------------    " + System.getProperty("url"))
+    systemProperty "url" , System.getProperty("url")
+    testLogging.showStandardStreams = true
     doLast {
         javaexec {
-            main = "cucumber.api.cli.Main"
+            main = "TestRunner"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'json:target/cucumber.json', '--glue', 'steps', 'src/test/resources', "--tags ",System.getProperty("cucumber.options")]
+            args = ['--plugin', 'json:target/cucumber.json', '--glue', 'steps', 'src/test/resources', "--tags ", System.getProperty("cucumber.options")]
         }
     }
 }

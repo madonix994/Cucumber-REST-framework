@@ -12,8 +12,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
 
+import static steps.StepsHooks.scenarioCounter;
+import static steps.StepsHooks.scenarioName;
+
 
 public class ConnectionManager {
+
+	public static int Counter;
+	public static String currentRequest = "";
+
+	public static void initCounter() {
+		Counter = 1;
+	}
 
 	public static void pingEnvironment(String env) throws Exception {
 		int counter = 1;
@@ -36,14 +46,12 @@ public class ConnectionManager {
 		} catch (Exception e) {
 			throw new Exception("There was an issue while trying to ping the env. Error message: " + e);
 		}
-
 	}
 
 	public static String sendRequest(String env, RequestBody requestBody) throws Exception {
 		try {
-			emptyMessageStorage();
 			OkHttpClient client = new OkHttpClient().newBuilder().build();
-			String url = "http://" + env + "-apa.gaming.lan/PlayerPortalFacade/PlayerService.svc/Player";
+			String url = "http://" + env + "-apa.gaming.lan" + getCurrentRequestURl();
 			Request request = new Request.Builder()
 					.url(url)
 					.method("POST", requestBody)
@@ -53,13 +61,25 @@ public class ConnectionManager {
 			saveRequestBody(request);
 			Response response = client.newCall(request).execute();
 			return saveResponseBody(response);
-
 		} catch (Exception e) {
 			throw new Exception("There was an issue while trying to send the request. Error message: " + e);
 		}
 	}
 
-	private static void emptyMessageStorage() throws IOException {
+	private static String getCurrentRequestURl() throws Exception {
+		switch (currentRequest) {
+			case "":
+				return "";
+			case "CreatePlayer":
+				return "/PlayerPortalFacade/PlayerService.svc/Player";
+			case "PlayerLogin":
+				return "/PlayerPortalFacade/PlayerService.svc/Login";
+			default:
+				throw new Exception("There is an issue with current request: " + currentRequest);
+		}
+	}
+
+	public static void emptyMessageStorage() throws IOException {
 		File directory = new File("messageStorage");
 		FileUtils.cleanDirectory(directory);
 	}
@@ -70,9 +90,12 @@ public class ConnectionManager {
 			Buffer buffer = new Buffer();
 			Objects.requireNonNull(copy.body()).writeTo(buffer);
 			String requestBody = buffer.readUtf8();
-			FileWriter file = new FileWriter("messageStorage/Request.json");
-			file.write(requestBody);
-			file.close();
+			File file = new File("messageStorage/" + scenarioCounter + "_" + scenarioName + "/" + Counter + "_" + currentRequest + "RQ.json");
+			file.getParentFile().mkdirs();
+			FileWriter fileWriter = new FileWriter(file);
+			Counter++;
+			fileWriter.write(requestBody);
+			fileWriter.close();
 		} catch (Exception e) {
 			throw new Exception("There was an issue while trying to save the file. Error message: " + e);
 		}
@@ -81,42 +104,27 @@ public class ConnectionManager {
 	private static String saveResponseBody(Response response) throws Exception {
 		try {
 			String responseBody = Objects.requireNonNull(response.body()).string();
-			FileWriter file = new FileWriter("messageStorage/Response.json");
-			file.write(responseBody);
-			file.close();
+			File file;
+			if (responseBody.contains("html")) {
+				file = new File("messageStorage/" + scenarioCounter + "_" + scenarioName + "/" + Counter + "_" + currentRequest + "RS.html");
+			} else {
+				file = new File("messageStorage/" + scenarioCounter + "_" + scenarioName + "/" + Counter + "_" + currentRequest + "RS.json");
+			}
+			FileWriter fileWriter = new FileWriter(file);
+			Counter++;
+			fileWriter.write(responseBody);
+			fileWriter.close();
 			return responseBody;
 		} catch (Exception e) {
 			throw new Exception("There was an issue while trying to save the file. Error message: " + e);
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public static RequestBody generateRequest(Object object) {
 		MediaType mediaType = MediaType.parse("application/json");
-		Gson gson = new GsonBuilder().create();
-		String jsonPlayer = gson.toJson(object);
-
-		String jsonRequest = "{\n" +
-				"\"deviceFingerprint\": \"iovation device fingerprint\",\n" +
-				"\"trackingSource\": {\n" +
-				"\"CustomFields\": [\n" +
-				"{\n" +
-				"\"Value\": \"Broad\",\n" +
-				"\"Key\": \"MatchType\"\n" +
-				"}\n" +
-				"],\n" +
-				"\"Creative\": \"Advert\",\n" +
-				"\"Content\": \"Hulk slot\",\n" +
-				"\"Btag\": \"btag value\",\n" +
-				"\"MarketingChannel\": \"PPC\",\n" +
-				"\"CampaignName\": \"Add group (slots)\",\n" +
-				"\"MarketingSource\": \"Google\"\n" +
-				"},\n" +
-				"\"player\":" +
-//				jsonPlayer + // TODO uncomment to work
-				"}";
-
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String jsonRequest = gson.toJson(object);
 		return RequestBody.create(mediaType, jsonRequest);
 	}
-
-
 }

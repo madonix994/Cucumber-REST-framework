@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Scenario: Create new Player via API" tests="4" skipped="0" failures="2" errors="0" timestamp="2021-01-16T14:31:28" hostname="KGCDS-PREDRAGK" time="0.315">
+<testsuite name="Scenario: Create new Player via API" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-01-17T18:33:20" hostname="KGCDS-PREDRAGK" time="1.178">
   <properties/>
   <testcase name="Given The env is up and running" classname="Scenario: Create new Player via API" time="0.0"/>
   <testcase name="When User wants to create player" classname="Scenario: Create new Player via API" time="0.0"/>
-  <testcase name="Then User send request to create player" classname="Scenario: Create new Player via API" time="0.001">
-    <failure message="java.lang.Exception: &#10;&#10;Player was not created with username: QAWA8K1p9Z0x4" type="java.lang.Exception">java.lang.Exception: 
+  <testcase name="Then User send request to create player" classname="Scenario: Create new Player via API" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Create new Player via API" time="1.841"/>
+  <system-out><![CDATA[
 
-Player was not created with username: QAWA8K1p9Z0x4
-	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
-	at ✽.Then User send request to create player(Test.feature:8)
-</failure>
-  </testcase>
-  <testcase name="classMethod" classname="Scenario: Create new Player via API" time="0.976">
-    <failure message="java.lang.Exception: &#10;&#10;Player was not created with username: QAWA8K1p9Z0x4" type="java.lang.Exception">java.lang.Exception: 
+Scenario name: Create new Player via API
 
-Player was not created with username: QAWA8K1p9Z0x4
-	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
-	at ✽.Then User send request to create player(Test.feature:8)
-</failure>
-  </testcase>
-  <system-out><![CDATA[Pinging the ICMANRC env.
+
+
+
+ ENV: icsc97
+Pinging the ICSC97 env.
 Env has status 403 which is expected.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

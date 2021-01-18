@@ -1,46 +1,77 @@
 [
   {
-    "line": 2,
+    "line": 1,
     "elements": [
       {
-        "line": 5,
+        "before": [
+          {
+            "result": {
+              "duration": 11064100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsHooks.beforeScenario(Scenario)"
+            }
+          }
+        ],
+        "line": 4,
         "name": "Create new Player via API",
         "description": "",
         "id": "test;create-new-player-via-api",
+        "after": [
+          {
+            "result": {
+              "duration": 3885000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepsHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 655564800,
+              "duration": 643875700,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "The env is up and running",
+            "match": {
+              "location": "TestSteps.theEnvIsUpAndRunning()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 178787000,
               "status": "passed"
             },
             "line": 6,
-            "name": "The env is up and running",
+            "name": "User wants to create player",
             "match": {
-              "location": "TestSteps.theEnvIsUpAndRunning()"
+              "location": "TestSteps.userWantsToCreatePlayer()"
             },
-            "keyword": "Given "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 176312200,
+              "duration": 991829900,
               "status": "passed"
             },
+            "embeddings": [
+              {
+                "data": "ewogICJkZXZpY2VGaW5nZXJwcmludCI6ICJpb3ZhdGlvbiBkZXZpY2UgZmluZ2VycHJpbnQiLAogICJ0cmFja2luZ1NvdXJjZSI6IHsKICAgICJDdXN0b21GaWVsZHMiOiBbCiAgICAgIHsKICAgICAgICAiVmFsdWUiOiAiQnJvYWQiLAogICAgICAgICJLZXkiOiAiTWF0Y2hUeXBlIgogICAgICB9CiAgICBdLAogICAgIkNyZWF0aXZlIjogIkFkdmVydCIsCiAgICAiQ29udGVudCI6ICJIdWxrIHNsb3QiLAogICAgIkJ0YWciOiAiYnRhZyB2YWx1ZSIsCiAgICAiTWFya2V0aW5nQ2hhbm5lbCI6ICJPT0MiLAogICAgIkNhbXBhaWduTmFtZSI6ICJBZGQgZ3JvdXAgKHNsb3RzKSIsCiAgICAiTWFya2V0aW5nU291cmNlIjogIkdvb2dsZSIKICB9LAogICJwbGF5ZXIiOiB7CiAgICAiTG9jYWxlIjogImVuLVVTIiwKICAgICJIb3VzZU51bWJlciI6IDM1LAogICAgIkluc3RhbnRNZXNzZW5nZXIiOiAzODYsCiAgICAiU2lnbnVwSXAiOiAiMTkzLjE2OS40OC40OCIsCiAgICAiUG9zdGFsQ29kZSI6IDI1LAogICAgIkdlbmRlciI6ICJNIiwKICAgICJQb3J0YWxJZCI6IDEsCiAgICAiQ3VycmVuY3lJZCI6IDExMiwKICAgICJNb2JpbGVQaG9uZSI6ICIyMzM2NTg4MzI3IiwKICAgICJHZW9Mb2NDb3VudHJ5Q29kZSI6ICJlbiIsCiAgICAiU3RyZWV0IjogIkZyYW5rIERyaXZlIiwKICAgICJIZWFyQWJvdXRVcyI6ICJpbnRlcm5ldCIsCiAgICAiQ3VzdG9tUGFyYW1ldGVycyI6IFsKICAgICAgewogICAgICAgICJWYWx1ZSI6ICJjcmVmZXJlciB2YWwiLAogICAgICAgICJLZXkiOiAiY3JlZmVyZXIiCiAgICAgIH0KICAgIF0sCiAgICAiUGFzc3dvcmQiOiAicWFOQTEyMzQ1ISIsCiAgICAiRGF0ZU9mQmlydGgiOiAiL0RhdGUoMzQ1NDI3MjAwMDAwKS8iLAogICAgIkNvdW50cnlJZCI6IDE5NCwKICAgICJJbnN0YW50TWVzc2VuZ2VyVHlwZSI6IDEwNSwKICAgICJTZWNyZXRBbnN3ZXIiOiAiQW5zd2VyIHRvIHNlY3VyaXR5IHF1ZXN0aW9uIiwKICAgICJVc2VyTmFtZSI6ICJRQVdBMVU1UzFJNHo5IiwKICAgICJGaXJzdE5hbWUiOiAiUUFXQTFVNVMxSTR6OSIsCiAgICAiU3RhdGVQcm92aW5jZSI6ICJTdGF0ZSBhbmQgUHJvdmluY2UiLAogICAgIlRpdGxlIjogIjEiLAogICAgIkNpdHkiOiAiTWFyaWJvciIsCiAgICAiRU1haWwiOiAiUUFXQTFVNVMxSTR6OUBtYWlsaW5hdG9yLmNvbSIsCiAgICAiTWlkZGxlTmFtZSI6ICJDZWxlbmEiLAogICAgIkRvY3VtZW50TnVtYmVyIjogIjA4OTE1Njk0MTE4NDciLAogICAgIlByb2R1Y3RUeXBlSWQiOiAxLAogICAgIlJlY2VpdmVOZXdzIjogInRydWUiLAogICAgIkNvdXBvbkNvZGUiOiAiIiwKICAgICJTZWNyZXRRdWVzdGlvbklkIjogMSwKICAgICJQaG9uZU51bWJlciI6ICI3OTE4NTgyNzYyIiwKICAgICJMYXN0TmFtZSI6ICJWb2xrbWFuIiwKICAgICJNb2JpbGVDbGllbnQiOiB0cnVlCiAgfQp9",
+                "mime_type": "application/json"
+              },
+              {
+                "data": "eyJFcnJvck1lc3NhZ2UiOm51bGwsIlN0YXR1c0NvZGUiOiJTdWNjZXNzIiwiSXNQbGF5ZXJBY3RpdmF0ZWQiOnRydWUsIlBsYXllcklkIjoxMjMwN30\u003d",
+                "mime_type": "application/json"
+              }
+            ],
             "line": 7,
-            "name": "User wants to create player",
-            "match": {
-              "location": "TestSteps.userWantsToCreatePlayer()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 132462700,
-              "error_message": "java.lang.Exception: \n\nPlayer was not created with username: QAWA8K1p9Z0x4\r\n\tat steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)\r\n\tat ✽.Then User send request to create player(Test.feature:8)\r\n",
-              "status": "failed"
-            },
-            "line": 8,
             "name": "User send request to create player",
             "match": {
               "location": "TestSteps.userSendRequestToCreatePlayer()"
@@ -50,61 +81,8 @@
         ],
         "tags": [
           {
-            "line": 4,
+            "line": 3,
             "name": "@smoke"
-          }
-        ]
-      },
-      {
-        "line": 11,
-        "name": "Create new Player via API2",
-        "description": "",
-        "id": "test;create-new-player-via-api2",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 56795400,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "The env is up and running",
-            "match": {
-              "location": "TestSteps.theEnvIsUpAndRunning()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 42591000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "User wants to create player",
-            "match": {
-              "location": "TestSteps.userWantsToCreatePlayer()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 70864200,
-              "error_message": "java.lang.Exception: \n\nPlayer was not created with username: QAWA8o4k4M1j6\r\n\tat steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)\r\n\tat ✽.Then User send request to create player(Test.feature:14)\r\n",
-              "status": "failed"
-            },
-            "line": 14,
-            "name": "User send request to create player",
-            "match": {
-              "location": "TestSteps.userSendRequestToCreatePlayer()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 10,
-            "name": "@regression"
           }
         ]
       }
@@ -113,12 +91,6 @@
     "description": "",
     "id": "test",
     "keyword": "Feature",
-    "uri": "Test.feature",
-    "tags": [
-      {
-        "line": 1,
-        "name": "@all"
-      }
-    ]
+    "uri": "Test.feature"
   }
 ]

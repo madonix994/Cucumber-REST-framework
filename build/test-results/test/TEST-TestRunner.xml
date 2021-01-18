@@ -1,42 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="TestRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="KGCDS-PREDRAGK" time="0.0">
   <properties/>
-  <system-out><![CDATA[@all
-Feature: Test
+  <system-out><![CDATA[Feature: Test
 
 
-Player was generated with username: QAWA8K1p9Z0x4
+Player was created with username: QAWA1U5S1I4z9
 
-
-Player was generated with username: QAWA8o4k4M1j6
-
-  @regression
-  Scenario: Create new Player via API2      # Test.feature:11
+  @smoke
+  Scenario: Create new Player via API       # Test.feature:4
     Given The env is up and running         # TestSteps.theEnvIsUpAndRunning()
     When User wants to create player        # TestSteps.userWantsToCreatePlayer()
     Then User send request to create player # TestSteps.userSendRequestToCreatePlayer()
-      java.lang.Exception: 
-      
-      Player was not created with username: QAWA8o4k4M1j6
-      	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
-      	at ?.Then User send request to create player(Test.feature:14)
 
-
-2 Scenarios (2 failed)
-6 Steps (2 failed, 4 passed)
-0m1.135s
-
-java.lang.Exception: 
-
-Player was not created with username: QAWA8K1p9Z0x4
-	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
-	at ?.Then User send request to create player(Test.feature:8)
-
-java.lang.Exception: 
-
-Player was not created with username: QAWA8o4k4M1j6
-	at steps.TestSteps.userSendRequestToCreatePlayer(TestSteps.java:27)
-	at ?.Then User send request to create player(Test.feature:14)
+1 Scenarios (1 passed)
+3 Steps (3 passed)
+0m1.829s
 
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

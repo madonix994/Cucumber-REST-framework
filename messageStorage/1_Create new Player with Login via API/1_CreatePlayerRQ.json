@@ -1,0 +1,57 @@
+{
+  "deviceFingerprint": "iovation device fingerprint",
+  "trackingSource": {
+    "CustomFields": [
+      {
+        "Value": "Broad",
+        "Key": "MatchType"
+      }
+    ],
+    "Creative": "Advert",
+    "Content": "Hulk slot",
+    "Btag": "btag value",
+    "MarketingChannel": "OOC",
+    "CampaignName": "Add group (slots)",
+    "MarketingSource": "Google"
+  },
+  "player": {
+    "Locale": "en-US",
+    "HouseNumber": 35,
+    "InstantMessenger": 386,
+    "SignupIp": "193.169.48.48",
+    "PostalCode": 25,
+    "Gender": "M",
+    "PortalId": 1,
+    "CurrencyId": 112,
+    "MobilePhone": "8973312258",
+    "GeoLocCountryCode": "en",
+    "Street": "Twyla Drives",
+    "HearAboutUs": "internet",
+    "CustomParameters": [
+      {
+        "Value": "creferer val",
+        "Key": "creferer"
+      }
+    ],
+    "Password": "qaNA12345!",
+    "DateOfBirth": "/Date(345427200000)/",
+    "CountryId": 194,
+    "InstantMessengerType": 105,
+    "SecretAnswer": "Answer to security question",
+    "UserName": "QAWA1m7H5K5I9",
+    "FirstName": "QAWA1m7H5K5I9",
+    "StateProvince": "State and Province",
+    "Title": "1",
+    "City": "Maribor",
+    "EMail": "QAWA1m7H5K5I9@mailinator.com",
+    "MiddleName": "Randy",
+    "DocumentNumber": "3676287641275",
+    "ProductTypeId": 1,
+    "ReceiveNews": "true",
+    "CouponCode": "",
+    "SecretQuestionId": 1,
+    "PhoneNumber": "5690396914",
+    "LastName": "Zieme",
+    "MobileClient": true
+  }
+}

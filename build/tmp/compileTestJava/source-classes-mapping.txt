@@ -1,14 +1,36 @@
-helpers/CreatePlayer.java
- helpers.CreatePlayer
-TestRunner.java
- TestRunner
 helpers/RandomGenerator.java
  helpers.RandomGenerator
-helpers/classes/CustomParameter.java
- helpers.classes.CustomParameter
-helpers/classes/Player.java
- helpers.classes.Player
-helpers/ConnectionManager/ConnectionManager.java
- helpers.ConnectionManager.ConnectionManager
+helpers/classes/requests/Player.java
+ helpers.classes.requests.Player
+TestRunner.java
+ TestRunner
+helpers/classes/responses/CreatePlayerRS.java
+ helpers.classes.responses.CreatePlayerRS
+helpers/classes/requests/TrackingSource.java
+ helpers.classes.requests.TrackingSource
+helpers/LoginPlayer.java
+ helpers.LoginPlayer
+helpers/classes/requests/PlayerLoginRQ.java
+ helpers.classes.requests.PlayerLoginRQ
+helpers/classes/requests/CustomField.java
+ helpers.classes.requests.CustomField
+helpers/classes/responses/LogonSession.java
+ helpers.classes.responses.LogonSession
+helpers/CreatePlayer.java
+ helpers.CreatePlayer
+helpers/classes/requests/CustomParameter.java
+ helpers.classes.requests.CustomParameter
+helpers/classes/responses/Message.java
+ helpers.classes.responses.Message
+helpers/classes/requests/CreatePlayerRQ.java
+ helpers.classes.requests.CreatePlayerRQ
+helpers/classes/responses/Action.java
+ helpers.classes.responses.Action
+helpers/classes/responses/PlayerLoginRS.java
+ helpers.classes.responses.PlayerLoginRS
 steps/TestSteps.java
  steps.TestSteps
+steps/StepsHooks.java
+ steps.StepsHooks
+helpers/ConnectionManager/ConnectionManager.java
+ helpers.ConnectionManager.ConnectionManager
